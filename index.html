@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Neo Brutalist - Nama Anda</title>
+
+    <!-- Memuat Tailwind CSS dari CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Memuat Font dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Gaya kustom untuk melengkapi Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Kelas utilitas untuk bayangan khas Neo Brutalist */
+        .neo-shadow {
+            box-shadow: 8px 8px 0px #000;
+        }
+
+        .neo-shadow-sm {
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .neo-shadow-modal {
+            box-shadow: 12px 12px 0px #000;
+        }
+
+        /* Efek hover pada tombol dan kartu */
+        .btn-hover:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #000;
+        }
+
+        .card-hover:hover {
+            transform: translate(-4px, -4px);
+        }
+
+        /* Gaya untuk Modal */
+        #projectModal.hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-yellow-300 text-black antialiased">
+
+    <!-- Kontainer Utama -->
+    <div class="container mx-auto max-w-5xl p-4 md:p-8">
+
+        <!-- Header dan Navigasi -->
+        <header class="mb-16">
+            <nav class="bg-white p-4 border-4 border-black neo-shadow flex justify-between items-center relative">
+                <div class="font-black text-2xl">
+                    <a href="#">PORTFOLIO.</a>
+                </div>
+                <ul class="hidden md:flex space-x-8 font-bold">
+                    <li><a href="#tentang" class="hover:text-blue-600">Tentang</a></li>
+                    <li><a href="#proyek" class="hover:text-blue-600">Proyek</a></li>
+                    <li><a href="#kontak" class="hover:text-blue-600">Kontak</a></li>
+                </ul>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="font-black text-2xl focus:outline-none">MENU</button>
+                </div>
+                <!-- Menu Mobile -->
+                <ul id="mobile-menu"
+                    class="hidden md:hidden absolute top-full left-0 w-full bg-white border-4 border-black mt-2 z-20">
+                    <li class="border-b-4 border-black"><a href="#tentang"
+                            class="block p-4 font-bold hover:bg-yellow-200">Tentang</a></li>
+                    <li class="border-b-4 border-black"><a href="#proyek"
+                            class="block p-4 font-bold hover:bg-yellow-200">Proyek</a></li>
+                    <li><a href="#kontak" class="block p-4 font-bold hover:bg-yellow-200">Kontak</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="mb-24 text-center md:text-left">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-2/3">
+                    <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">Halo, Saya Pengembang Perangkat
+                        Lunak.</h1>
+                    <p class="text-lg mb-6 max-w-xl">Saya merancang dan membangun pengalaman digital yang fungsional dan
+                        menarik secara visual dengan sentuhan estetika minimalis dan mentah.</p>
+                    <a href="#proyek"
+                        class="inline-block bg-blue-500 text-white font-bold py-4 px-8 border-4 border-black neo-shadow-sm btn-hover transition-all duration-200">
+                        LIHAT PROYEK SAYA
+                    </a>
+                </div>
+                <div class="w-full md:w-1/3 flex justify-center md:justify-end">
+                    <img src="https://placehold.co/300x300/eab308/000000?text=Foto\nAnda" alt="Foto profil placeholder"
+                        class="w-64 h-64 object-cover border-4 border-black neo-shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentang Saya -->
+        <section id="tentang" class="mb-24 p-8 bg-white border-4 border-black">
+            <h2 class="text-4xl font-black mb-6">Tentang Saya</h2>
+            <p class="mb-6 text-lg">
+                Saya adalah seorang pengembang dengan hasrat untuk menciptakan solusi perangkat lunak yang efisien dan
+                elegan. Saya memiliki pengalaman dalam pengembangan web front-end dan back-end, dan selalu tertarik
+                untuk mempelajari teknologi baru. Gaya Neo Brutalist dalam desain mencerminkan filosofi saya dalam
+                pengembangan: jujur, fungsional, dan tanpa basa-basi.
+            </p>
+            <h3 class="text-2xl font-bold mb-4">Keahlian</h3>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black font-bold">HTML & CSS</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black font-bold">JavaScript</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black font-bold">React</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black font-bold">Node.js</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black font-bold">Figma</span>
+                <span class="bg-gray-200 py-2 px-4 border-2 border-black font-bold">UI/UX Design</span>
+            </div>
+        </section>
+
+        <!-- Proyek -->
+        <section id="proyek" class="mb-24">
+            <h2 class="text-4xl md:text-5xl font-black mb-8">Proyek Pilihan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                <!-- Kartu Proyek 1 -->
+                <div
+                    class="bg-white p-6 border-4 border-black neo-shadow card-hover transition-transform duration-200 flex flex-col">
+                    <h3 class="text-3xl font-black mb-3">Aplikasi Manajemen Tugas</h3>
+                    <p class="mb-4 flex-grow">Sebuah aplikasi berbasis web untuk mengatur tugas harian dengan antarmuka
+                        yang sederhana dan lugas.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-sm bg-pink-300 border-2 border-black px-2 py-1 font-semibold">React</span>
+                        <span class="text-sm bg-green-300 border-2 border-black px-2 py-1 font-semibold">Node.js</span>
+                    </div>
+                    <button class="project-detail-btn font-bold text-blue-600 hover:underline text-left"
+                        data-title="Aplikasi Manajemen Tugas"
+                        data-image="https://placehold.co/600x400/fecaca/000000?text=Aplikasi+Tugas"
+                        data-description="Ini adalah deskripsi yang lebih panjang untuk aplikasi manajemen tugas. Dibangun menggunakan React untuk antarmuka yang dinamis dan Node.js/Express untuk backend REST API. Fitur termasuk otentikasi pengguna, pembuatan tugas, penetapan tanggal jatuh tempo, dan filter status tugas."
+                        data-tech="React, Node.js, Express, MongoDB, JWT" data-link-live="#" data-link-repo="#">Lihat
+                        Detail →</button>
+                </div>
+
+                <!-- Kartu Proyek 2 -->
+                <div
+                    class="bg-white p-6 border-4 border-black neo-shadow card-hover transition-transform duration-200 flex flex-col">
+                    <h3 class="text-3xl font-black mb-3">Situs Web E-commerce</h3>
+                    <p class="mb-4 flex-grow">Desain dan implementasi toko online untuk merek fashion lokal dengan fokus
+                        pada pengalaman pengguna yang cepat.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-sm bg-purple-300 border-2 border-black px-2 py-1 font-semibold">Next.js</span>
+                        <span class="text-sm bg-yellow-300 border-2 border-black px-2 py-1 font-semibold">Tailwind
+                            CSS</span>
+                    </div>
+                    <button class="project-detail-btn font-bold text-blue-600 hover:underline text-left"
+                        data-title="Situs Web E-commerce Fashion"
+                        data-image="https://placehold.co/600x400/c4b5fd/000000?text=Toko+Fashion"
+                        data-description="Situs e-commerce lengkap yang dibuat dengan Next.js untuk Server-Side Rendering (SSR) yang cepat dan SEO-friendly. Menggunakan Stripe untuk pemrosesan pembayaran dan memiliki panel admin kustom untuk manajemen produk."
+                        data-tech="Next.js, Tailwind CSS, Stripe, Vercel" data-link-live="#" data-link-repo="#">Lihat
+                        Detail →</button>
+                </div>
+
+                <!-- Kartu Proyek 3 -->
+                <div
+                    class="bg-white p-6 border-4 border-black neo-shadow card-hover transition-transform duration-200 flex flex-col">
+                    <h3 class="text-3xl font-black mb-3">Dasbor Analitik Data</h3>
+                    <p class="mb-4 flex-grow">Visualisasi data interaktif untuk memantau metrik bisnis penting dalam
+                        satu dasbor yang komprehensif.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-sm bg-red-300 border-2 border-black px-2 py-1 font-semibold">D3.js</span>
+                        <span class="text-sm bg-blue-300 border-2 border-black px-2 py-1 font-semibold">Express</span>
+                    </div>
+                    <button class="project-detail-btn font-bold text-blue-600 hover:underline text-left"
+                        data-title="Dasbor Analitik Data"
+                        data-image="https://placehold.co/600x400/bbf7d0/000000?text=Dasbor+Data"
+                        data-description="Sebuah dasbor analitik kustom yang menggunakan D3.js untuk membuat visualisasi data yang kaya dan interaktif. Data diperbarui secara real-time melalui WebSocket yang terhubung ke backend Express."
+                        data-tech="D3.js, Express, WebSocket, SVG" data-link-live="#" data-link-repo="#">Lihat Detail
+                        →</button>
+                </div>
+
+                <!-- Kartu Proyek 4 -->
+                <div
+                    class="bg-white p-6 border-4 border-black neo-shadow card-hover transition-transform duration-200 flex flex-col">
+                    <h3 class="text-3xl font-black mb-3">Blog Pribadi</h3>
+                    <p class="mb-4 flex-grow">Platform blog yang dibangun dari awal dengan sistem manajemen konten yang
+                        minimalis dan efisien.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-sm bg-orange-300 border-2 border-black px-2 py-1 font-semibold">Gatsby</span>
+                        <span class="text-sm bg-teal-300 border-2 border-black px-2 py-1 font-semibold">GraphQL</span>
+                    </div>
+                    <button class="project-detail-btn font-bold text-blue-600 hover:underline text-left"
+                        data-title="Blog Pribadi & CMS"
+                        data-image="https://placehold.co/600x400/fed7aa/000000?text=Blog+Pribadi"
+                        data-description="Blog super cepat yang dibuat dengan generator situs statis Gatsby. Konten dikelola melalui Markdown dan diambil menggunakan GraphQL, menghasilkan pengalaman penulisan yang berfokus pada pengembang."
+                        data-tech="Gatsby, GraphQL, Markdown, Netlify" data-link-live="#" data-link-repo="#">Lihat
+                        Detail →</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Kontak -->
+        <section id="kontak" class="mb-16">
+            <div class="bg-white p-8 border-4 border-black neo-shadow">
+                <h2 class="text-4xl font-black mb-6">Hubungi Saya</h2>
+                <p class="mb-8 text-lg">Tertarik untuk bekerja sama atau punya pertanyaan? Jangan ragu untuk mengirim
+                    pesan.</p>
+                <form action="#">
+                    <div class="mb-4">
+                        <label for="name" class="font-bold block mb-2">Nama</label>
+                        <input type="text" id="name"
+                            class="w-full p-3 border-4 border-black focus:outline-none focus:bg-yellow-200 transition-colors"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="font-bold block mb-2">Email</label>
+                        <input type="email" id="email"
+                            class="w-full p-3 border-4 border-black focus:outline-none focus:bg-yellow-200 transition-colors"
+                            required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="font-bold block mb-2">Pesan</label>
+                        <textarea id="message" rows="5"
+                            class="w-full p-3 border-4 border-black focus:outline-none focus:bg-yellow-200 transition-colors"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-black text-white font-black py-4 px-8 border-4 border-black neo-shadow-sm btn-hover transition-all duration-200">
+                        KIRIM PESAN
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-8">
+            <p class="font-bold">&copy; 2025 - Dibuat dengan semangat Neo Brutalism.</p>
+        </footer>
+    </div>
+
+    <!-- Modal Proyek -->
+    <div id="projectModal"
+        class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
+        <div id="modal-content"
+            class="bg-white p-6 border-4 border-black neo-shadow-modal w-full max-w-3xl max-h-full overflow-y-auto relative">
+            <!-- BUG FIX: Tombol tutup diposisikan di dalam modal -->
+            <button id="closeModalBtn"
+                class="absolute top-3 right-3 bg-red-500 text-white font-black text-xl flex items-center justify-center w-10 h-10 rounded-full border-4 border-black neo-shadow-sm btn-hover transition-all duration-200 z-10 cursor-pointer">×</button>
+            <img id="modal-image" src="" alt="Gambar proyek"
+                class="w-full h-64 object-cover border-4 border-black mb-4">
+            <h2 id="modal-title" class="text-4xl font-black mb-4"></h2>
+            <p id="modal-description" class="mb-6"></p>
+            <h3 class="text-xl font-bold mb-2">Teknologi yang Digunakan:</h3>
+            <p id="modal-tech" class="mb-6 font-mono"></p>
+            <div class="flex space-x-4">
+                <a id="modal-link-live" href="#" target="_blank"
+                    class="flex-1 text-center bg-blue-500 text-white font-bold py-3 px-6 border-4 border-black neo-shadow-sm btn-hover transition-all duration-200">Lihat
+                    Live</a>
+                <a id="modal-link-repo" href="#" target="_blank"
+                    class="flex-1 text-center bg-gray-800 text-white font-bold py-3 px-6 border-4 border-black neo-shadow-sm btn-hover transition-all duration-200">Lihat
+                    Repositori</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Skrip untuk fungsionalitas interaktif
+
+        // 1. Menu Mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menutup menu jika mengklik di luar
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // 2. Modal Detail Proyek
+        const projectModal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const detailButtons = document.querySelectorAll('.project-detail-btn');
+
+        // Fungsi untuk membuka modal
+        const openModal = (data) => {
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-image').src = data.image;
+            document.getElementById('modal-description').textContent = data.description;
+            document.getElementById('modal-tech').textContent = data.tech;
+            document.getElementById('modal-link-live').href = data.linkLive;
+            document.getElementById('modal-link-repo').href = data.linkRepo;
+            projectModal.classList.remove('hidden');
+            // Mencegah scroll di background
+            document.body.style.overflow = 'hidden';
+        };
+
+        // Fungsi untuk menutup modal
+        const closeModal = () => {
+            projectModal.classList.add('hidden');
+            // Mengizinkan scroll kembali
+            document.body.style.overflow = 'auto';
+        };
+
+        // Tambahkan event listener ke setiap tombol detail
+        detailButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const data = {
+                    title: button.dataset.title,
+                    image: button.dataset.image,
+                    description: button.dataset.description,
+                    tech: button.dataset.tech,
+                    linkLive: button.dataset.linkLive,
+                    linkRepo: button.dataset.linkRepo,
+                };
+                openModal(data);
+            });
+        });
+
+        // Event listener untuk tombol tutup dan latar belakang modal
+        closeModalBtn.addEventListener('click', closeModal);
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                closeModal();
+            }
+        });
+
+        // Menutup modal dengan tombol Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
